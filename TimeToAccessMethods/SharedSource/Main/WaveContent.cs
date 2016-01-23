@@ -8,8 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// File generated on 1/23/2016 9:05:15 PM
-namespace TimeToAccesMethods
+// File generated on 1/23/2016 9:18:25 PM
+namespace TimeToAccessMethods
 {
     using System;
     

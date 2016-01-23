@@ -5,18 +5,18 @@ using System.Linq;
 using System.Text;
 using WaveEngine.Framework;
 
-namespace TimeToAccesMethods
+namespace TimeToAccessMethods
 {
-    public class AccesByInterfaceMethodBehavior : SceneBehavior
+    public class AccesNormalMethodBehavior : SceneBehavior
     {
-        private IMyInterface myInterface;
+        private MyClass myClass;
         private MyScene myScene;
         private TimeSpan timer;
-        public AccesByInterfaceMethodBehavior()
+
+        public AccesNormalMethodBehavior()
             : base()
         {
-            var myClass = new ImplementsInterface();
-            this.myInterface = myClass as IMyInterface;
+            this.myClass = new MyClass();
             this.timer = new TimeSpan();
         }
 
@@ -33,18 +33,17 @@ namespace TimeToAccesMethods
             }
             else
             {
-                this.timer = TimeSpan.Zero;
+                this.timer = TimeSpan.Zero;             
    
                 var stopWatch = Stopwatch.StartNew();
-               
                 for (int i = 0; i < MyScene.ITERATIONS; i++)
-                {
-                    this.myInterface.MyMethod();
+                {                    
+                    this.myClass.MyMethod();                                      
                 }
                 stopWatch.Stop();
-                string nanoseconds = (((double)(stopWatch.Elapsed.TotalMilliseconds * 1000 * 1000) / MyScene.ITERATIONS).ToString("0.00 ns"));
+                string nanoseconds=(((double)(stopWatch.Elapsed.TotalMilliseconds * 1000 * 1000) / MyScene.ITERATIONS).ToString("0.00 ns"));
 
-                this.myScene.AccesInterfaceMethod.Text = "Interface Method Time :" + nanoseconds;                
+                this.myScene.AccesNormalMethod.Text = "Normal Method Time :" + nanoseconds;
             }
         }
     }

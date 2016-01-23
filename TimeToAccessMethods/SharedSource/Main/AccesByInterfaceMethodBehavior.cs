@@ -5,17 +5,18 @@ using System.Linq;
 using System.Text;
 using WaveEngine.Framework;
 
-namespace TimeToAccesMethods
+namespace TimeToAccessMethods
 {
-    public class AccesByOverridedBehavior : SceneBehavior
+    public class AccesByInterfaceMethodBehavior : SceneBehavior
     {
-        private OverrideClass myOverrideClass;
+        private IMyInterface myInterface;
         private MyScene myScene;
         private TimeSpan timer;
-        public AccesByOverridedBehavior()
+        public AccesByInterfaceMethodBehavior()
             : base()
         {
-            this.myOverrideClass = new OverrideClass();
+            var myClass = new ImplementsInterface();
+            this.myInterface = myClass as IMyInterface;
             this.timer = new TimeSpan();
         }
 
@@ -35,15 +36,15 @@ namespace TimeToAccesMethods
                 this.timer = TimeSpan.Zero;
    
                 var stopWatch = Stopwatch.StartNew();
-
+               
                 for (int i = 0; i < MyScene.ITERATIONS; i++)
                 {
-                    this.myOverrideClass.MyMethod();
+                    this.myInterface.MyMethod();
                 }
                 stopWatch.Stop();
                 string nanoseconds = (((double)(stopWatch.Elapsed.TotalMilliseconds * 1000 * 1000) / MyScene.ITERATIONS).ToString("0.00 ns"));
-                
-                this.myScene.AccesOverridedMethod.Text = "Overrided Method Time :" + nanoseconds ;                
+
+                this.myScene.AccesInterfaceMethod.Text = "Interface Method Time :" + nanoseconds;                
             }
         }
     }

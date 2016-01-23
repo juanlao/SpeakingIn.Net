@@ -6,7 +6,7 @@ using WaveEngine.Framework;
 using WaveEngine.Framework.Services;
 #endregion
 
-namespace TimeToAccesMethods
+namespace TimeToAccessMethods
 {
     public class Game : WaveEngine.Framework.Game
     {

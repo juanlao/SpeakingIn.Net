@@ -7,11 +7,11 @@ using WaveEngine.Common.Math;
 using WaveEngine.Framework.Graphics;
 using WaveEngine.Framework.Services;
 
-namespace TimeToAccesMethods
+namespace TimeToAccessMethods
 {
     public class App : WaveEngine.Adapter.Application
     {
-        TimeToAccesMethods.Game game;
+        TimeToAccessMethods.Game game;
         SpriteBatch spriteBatch;
         Texture2D splashScreen;
         bool splashState = true;
@@ -24,12 +24,12 @@ namespace TimeToAccesMethods
             this.Width = 1280;
             this.Height = 720;
 			this.FullScreen = false;
-			this.WindowTitle = "TimeToAccesMethods";
+			this.WindowTitle = "TimeToAccessMethods";
         }
 
         public override void Initialize()
         {
-            this.game = new TimeToAccesMethods.Game();
+            this.game = new TimeToAccessMethods.Game();
             this.game.Initialize(this);
 			
 			#region WAVE SOFTWARE LICENSE AGREEMENT

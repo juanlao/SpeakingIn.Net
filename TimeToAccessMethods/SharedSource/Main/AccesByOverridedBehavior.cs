@@ -5,18 +5,17 @@ using System.Linq;
 using System.Text;
 using WaveEngine.Framework;
 
-namespace TimeToAccesMethods
+namespace TimeToAccessMethods
 {
-    public class AccesNormalMethodBehavior : SceneBehavior
+    public class AccesByOverridedBehavior : SceneBehavior
     {
-        private MyClass myClass;
+        private OverrideClass myOverrideClass;
         private MyScene myScene;
         private TimeSpan timer;
-
-        public AccesNormalMethodBehavior()
+        public AccesByOverridedBehavior()
             : base()
         {
-            this.myClass = new MyClass();
+            this.myOverrideClass = new OverrideClass();
             this.timer = new TimeSpan();
         }
 
@@ -33,17 +32,18 @@ namespace TimeToAccesMethods
             }
             else
             {
-                this.timer = TimeSpan.Zero;             
+                this.timer = TimeSpan.Zero;
    
                 var stopWatch = Stopwatch.StartNew();
+
                 for (int i = 0; i < MyScene.ITERATIONS; i++)
-                {                    
-                    this.myClass.MyMethod();                                      
+                {
+                    this.myOverrideClass.MyMethod();
                 }
                 stopWatch.Stop();
-                string nanoseconds=(((double)(stopWatch.Elapsed.TotalMilliseconds * 1000 * 1000) / MyScene.ITERATIONS).ToString("0.00 ns"));
-
-                this.myScene.AccesNormalMethod.Text = "Normal Method Time :" + nanoseconds;
+                string nanoseconds = (((double)(stopWatch.Elapsed.TotalMilliseconds * 1000 * 1000) / MyScene.ITERATIONS).ToString("0.00 ns"));
+                
+                this.myScene.AccesOverridedMethod.Text = "Overrided Method Time :" + nanoseconds ;                
             }
         }
     }

@@ -14,7 +14,7 @@ using WaveEngine.Framework.Services;
 using WaveEngine.Framework.UI;
 #endregion
 
-namespace TimeToAccesMethods
+namespace TimeToAccessMethods
 {
     public class MyScene : Scene
     {

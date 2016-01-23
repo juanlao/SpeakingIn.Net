@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Windows.Forms;
 using WaveEngine.Adapter;
 
-namespace TimeToAccesMethods
+namespace TimeToAccessMethods
 {
     static class Program
     {
