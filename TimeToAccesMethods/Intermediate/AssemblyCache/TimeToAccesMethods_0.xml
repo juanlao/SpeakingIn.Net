@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TimeToAccesMethods_0</name>
+    </assembly>
+    <members>
+        <member name="M:TimeToAccesMethods.App.OnActivated">
+            <summary>
+            Called when [activated].
+            </summary>
+        </member>
+        <member name="M:TimeToAccesMethods.App.OnDeactivate">
+            <summary>
+            Called when [deactivate].
+            </summary>
+        </member>
+        <member name="F:TimeToAccesMethods.WaveContent.Scenes.MyScene">
+            <summary> Path to Content/Scenes/MyScene.wscene </summary>
+        </member>
+    </members>
+</doc>
